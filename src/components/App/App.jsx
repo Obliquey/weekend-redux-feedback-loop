@@ -8,6 +8,8 @@ import Feeling from '../Feedback/Feeling';
 import Comments from '../Feedback/Comments';
 import Support from '../Feedback/Support';
 import Understanding from '../Feedback/Understanding';
+import Review from '../Review+Thanks/Review';
+import Thanks from '../Review+Thanks/Thanks';
 
 function App() {
 
@@ -22,9 +24,11 @@ function App() {
         <Route path="/understanding" element={<Understanding />} />
         <Route path="/support" element={<Support />} />
         <Route path="/comments" element={<Comments />} />
+        <Route path="/review" element={<Review />} />
+        <Route path="/thanks" element={<Thanks />} />
       </Routes>
 
-      <footer>
+      <footer className=''>
         <h2>Thank you for taking time to fill this out!</h2>
       </footer>
     </div>
