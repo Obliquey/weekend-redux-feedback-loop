@@ -19,8 +19,8 @@ function App() {
       </header>
       <Routes>
         <Route path="/" element={<Feeling />} />
-        <Route path="/support" element={<Support />} />
         <Route path="/understanding" element={<Understanding />} />
+        <Route path="/support" element={<Support />} />
         <Route path="/comments" element={<Comments />} />
 
       </Routes>

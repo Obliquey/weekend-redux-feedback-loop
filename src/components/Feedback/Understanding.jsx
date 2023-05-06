@@ -1,14 +1,29 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { TextField, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function Understanding() {
     const [understandInput, setUnderstandInput] = useState('');
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Pressed the Understanding button! Here is the input:', understandInput)
+        if(!!understandInput) {
+            if(isNaN(understandInput) || understandInput > 5 || understandInput < 1) {
+                alert("Please input a number between 1-5")
+            }
+            else {
+                dispatch({
+                    type: 'UNDERSTANDING',
+                    payload: understandInput
+                })
+                navigate('../support')
+            }
+
+        }
     }
 
     return (
