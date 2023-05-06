@@ -1,14 +1,30 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { TextField, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function Support() {
     const [supportInput, setSupportInput] = useState('');
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Pressed the Support button! Here is the input:', supportInput)
+        if(!!supportInput) {
+            if(isNaN(supportInput) || supportInput > 5 || supportInput < 1) {
+                alert("Please input a number between 1-5")
+            }
+            else {
+                dispatch({
+                    type: 'SUPPORT',
+                    payload: supportInput
+                })
+                navigate('../comments')
+            }
+
+        }
     }
 
     return (

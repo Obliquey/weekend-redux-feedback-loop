@@ -24,6 +24,12 @@ const feedback = (state={}, action) => {
             copy.understanding = understanding;
             console.log("Got our Understands:", copy);
             return copy;
+        case 'SUPPORT':
+            const support = action.payload;
+            copy = state;
+            copy.support = support;
+            console.log("Got our support numbers:", copy);
+            return copy;
         default:
             return state;
     }
