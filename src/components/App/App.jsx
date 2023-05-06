@@ -6,6 +6,8 @@ import { Route, Routes } from 'react-router-dom';
 // components
 import Feeling from '../Feedback/Feeling';
 import Comments from '../Feedback/Comments';
+import Support from '../Feedback/Support';
+import Understanding from '../Feedback/Understanding';
 
 function App() {
 
@@ -19,6 +21,8 @@ function App() {
         
       </Routes>
       <Feeling />
+      <Support />
+      <Understanding />
       <Comments />
 
       <footer>
