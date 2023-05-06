@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import { List, ListItem, ListItemIcon, ListItemText, ListItemButton, Divider, Box } from "@mui/material";
+import { legacy_createStore } from "redux";
 
 
 function Review() {
@@ -29,7 +30,12 @@ function Review() {
             method: 'POST',
             url:'/feedback',
             data: feedback
-        })
+        }).then((res) => {
+            console.log('Successfully sent our inquiry to server');
+        }).catch((err) => {
+            console.log("couldn't connect to server", err);
+        })  
+        navigate('../thanks')
     }
 
     return (
