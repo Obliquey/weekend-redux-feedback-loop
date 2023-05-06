@@ -31,6 +31,12 @@ const feedback = (state={}, action) => {
             copy.support = support;
             console.log("Got our support numbers:", copy);
             return copy;
+        case 'COMMENTS':
+            const comments = action.payload;
+            copy = {...state};
+            copy.comments = comments;
+            console.log("Got our comments:", copy)
+            return copy;
         default:
             return state;
     }

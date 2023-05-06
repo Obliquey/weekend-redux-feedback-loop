@@ -15,7 +15,7 @@ function Comments() {
             type: 'COMMENTS',
             payload: commentsInput
         })
-        navigate('../')
+        navigate('../review')
     }
 
     return (
