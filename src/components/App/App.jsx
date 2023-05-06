@@ -22,7 +22,6 @@ function App() {
         <Route path="/understanding" element={<Understanding />} />
         <Route path="/support" element={<Support />} />
         <Route path="/comments" element={<Comments />} />
-
       </Routes>
 
       <footer>

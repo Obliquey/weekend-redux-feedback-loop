@@ -1,14 +1,21 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { TextField, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function Comments() {
     const [commentsInput, setCommentsInput] = useState('');
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Pressed the Comments button! Here is the input:', commentsInput)
+        dispatch({
+            type: 'COMMENTS',
+            payload: commentsInput
+        })
+        navigate('../')
     }
 
     return (
@@ -20,7 +27,8 @@ function Comments() {
                     label="Comments"
                     value={commentsInput}
                     onChange={(event) => setCommentsInput(event.target.value)}
-                    multiline maxRows={10} />
+                    multiline maxRows={10} 
+                    helperText="Optional"/>
                 <Button 
                     type="submit"
                     variant="contained">Next</Button>
