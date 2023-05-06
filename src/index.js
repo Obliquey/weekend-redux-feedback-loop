@@ -9,34 +9,20 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import { Provider } from 'react-redux';
 
-// reducer(s)
+// reducer
 const feedback = (state={}, action) => {
     switch (action.type) {
         case 'FEELINGS':
-            const feelings = action.payload;
-            let copy = {...state};
-            copy.feelings = feelings;
-            console.log("Got our Feelings data:", copy);
-            // return {...state, feelings: action.payload}
-            return copy;
+            return {...state, feelings: action.payload}
         case 'UNDERSTANDING':
-            const understanding = action.payload;
-            copy = {...state};
-            copy.understanding = understanding;
-            console.log("Got our Understands:", copy);
-            return copy;
+            return {...state, understanding: action.payload}
         case 'SUPPORT':
-            const support = action.payload;
-            copy = {...state};
-            copy.support = support;
-            console.log("Got our support numbers:", copy);
-            return copy;
+            return {...state, support: action.payload}
         case 'COMMENTS':
-            const comments = action.payload;
-            copy = {...state};
-            copy.comments = comments;
-            console.log("Got our comments:", copy)
-            return copy;
+            return {...state, comments: action.payload}
+        case 'RESET':
+            // Once user submits feedback, and then clicks Leave New Feedback button, reset state data vvvv
+            return {...state, feelings:'', understanding:'', support:'', comments:''}
         default:
             return state;
     }
