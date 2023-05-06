@@ -6,11 +6,24 @@ import { useNavigate } from "react-router-dom";
 function Feeling() {
     const [feelingInput, setFeelingInput] = useState('');
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Pressed the Feelings button! Here is the input:', feelingInput)
+        if(!!feelingInput) {
+            if(isNaN(feelingInput) || feelingInput > 5 || feelingInput < 1) {
+                alert("Please input a number between 1-5")
+            }
+            else {
+                dispatch({
+                    type: 'FEELINGS',
+                    payload: feelingInput
+                })
+                navigate('understanding')
+            }
+
+        }
     }
 
     return (
