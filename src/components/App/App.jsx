@@ -3,6 +3,10 @@ import axios from 'axios';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 
+// components
+import Feeling from '../Feedback/Feeling';
+import Comments from '../Feedback/Comments';
+
 function App() {
 
   return (
@@ -14,6 +18,12 @@ function App() {
       <Routes>
         
       </Routes>
+      <Feeling />
+      <Comments />
+
+      <footer>
+        <h2>Thank you for taking time to fill this out!</h2>
+      </footer>
     </div>
   );
 }
