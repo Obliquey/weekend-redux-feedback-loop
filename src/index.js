@@ -3,9 +3,29 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './components/App/App';
 
+// i choose you REDUX! 
+import { BrowserRouter } from 'react-router-dom';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
+import { Provider } from 'react-redux';
+
+
+
+const store = createStore(
+    combineReducers({
+
+    }),
+    applyMiddleware(
+        logger
+    )
+)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <App />
+        <Provider store={store}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </Provider>
     </React.StrictMode>
 );
