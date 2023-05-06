@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
 
 // components
 import Feeling from '../Feedback/Feeling';
@@ -18,12 +18,11 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
       <Routes>
-        
+        <Route path="/" element={<Feeling />} />
+        <Route path="/understanding" element={<Understanding />} />
+        <Route path="/support" element={<Support />} />
+        <Route path="/comments" element={<Comments />} />
       </Routes>
-      <Feeling />
-      <Support />
-      <Understanding />
-      <Comments />
 
       <footer>
         <h2>Thank you for taking time to fill this out!</h2>

@@ -9,11 +9,37 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import { Provider } from 'react-redux';
 
+// reducer(s)
+const feedback = (state={}, action) => {
+    switch (action.type) {
+        case 'FEELINGS':
+            const feelings = action.payload;
+            let copy = {...state};
+            copy.feelings = feelings;
+            console.log("Got our Feelings data:", copy);
+            // return {...state, feelings: action.payload}
+            return copy;
+        case 'UNDERSTANDING':
+            const understanding = action.payload;
+            copy = {...state};
+            copy.understanding = understanding;
+            console.log("Got our Understands:", copy);
+            return copy;
+        case 'SUPPORT':
+            const support = action.payload;
+            copy = {...state};
+            copy.support = support;
+            console.log("Got our support numbers:", copy);
+            return copy;
+        default:
+            return state;
+    }
+}
 
 
 const store = createStore(
     combineReducers({
-
+        feedback
     }),
     applyMiddleware(
         logger
