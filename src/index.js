@@ -9,11 +9,23 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import { Provider } from 'react-redux';
 
+// reducer(s)
+const feedback = (state={}, action) => {
+    switch (action.type) {
+        case 'FEELINGS':
+            const feelings = action.payload;
+            let copy = [...state]
+            copy.feelings = feelings;
+            return copy;
+        default:
+            return state;
+    }
+}
 
 
 const store = createStore(
     combineReducers({
-
+        feedback
     }),
     applyMiddleware(
         logger

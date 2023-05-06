@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { TextField, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function Feeling() {
     const [feelingInput, setFeelingInput] = useState('');
+    const navigate = useNavigate();
 
 
     const handleSubmit = (event) => {
