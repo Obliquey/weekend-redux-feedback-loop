@@ -26,12 +26,12 @@
         - [X] Action to save info in the store
             - [] Button that, if the user went back to edit a value, would take them straight to the review section.
     - [X] Review
-        - [] Table of info
-            - [] useSelector to get info from store
+        - [X] Table of info
+            - [X] useSelector to get info from store
         - [X] Next Button
-    - [] Thanks
-        - [] Button to restart
-    - [] Admin page
-        - [] GET req for all submitted feedbacks
-        - [] Table displaying all feedback
-            - [] Delete Button for each entry into the table/database
+    - [X] Thanks
+        - [X] Button to restart
+    - [X] Admin page
+        - [X] GET req for all submitted feedbacks
+        - [X] Table displaying all feedback
+            - [*Can't figure it out for some reason*] Delete Button for each entry into the table/database

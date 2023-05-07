@@ -18,6 +18,8 @@ Your project description goes here. What problem did you solve? How did you solv
 - **How to reset state upon submission + re-entry into the beginning of the app?**
     - Upon sending the RESET dispatch, in that switch case I did this => return {...state, feelings:'', understanding:'', support:'', comments:''}. The only problem I see with this, and it isn't a terrible problem, is that there are still technically 'values' in the state, only the values are empty strings. 🤷‍♂️ oh well.
 - **How can I unify my UI using both MUI and Tailwind CSS?**
-    - It took some finagling, because it seems only certain MUI components are able to be edited by Tailwind classes. So, I had to be a bit clever....I wrapped everything in divs, and then used the CSS classes on the divs. In particular, because I wasn't able to affect the MUI buttons directly, I had to wrap those in divs so that I could position and space them correctly. 
+    - It took some finagling, because it seems only certain MUI components are able to be edited by Tailwind classes. So, I had to be a bit clever....I wrapped everything in divs, and then used the CSS classes on the divs. In particular, because I wasn't able to affect the MUI buttons directly, I had to wrap those in divs so that I could position and space them correctly.
+- **Why isn't my ID for the element to be deleted passing to it's onClick function correctly?** 
+    - Couldn't tell ya the answer to this one. Haven't figured it out yet. But if I get time, I will ask someone to look over my code with me to see if they can help me find the problem.
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
