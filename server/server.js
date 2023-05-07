@@ -35,6 +35,22 @@ app.get('/feedback', (req, res) => {
 app.delete('/feedback/:id', (req, res) => {
     console.log("Inside DELETE route in server, going to delete this ==>", req.params);
     const id = req.params;
+
+    let sqlText = `
+        DELETE FROM "feedback"
+            WHERE "id" = $1;
+    `;
+
+    let sqlValues = [id]
+
+    pool.query(sqlText, sqlValues)
+        .then((dbRes) => {
+            console.log("Successfully delete element");
+            res.sendStatus(200);
+        }).catch((dbErr) => {
+            console.log("Error deleting table element:", dbErr);
+            res.sendStatus(500);
+        })
 })
 
 
