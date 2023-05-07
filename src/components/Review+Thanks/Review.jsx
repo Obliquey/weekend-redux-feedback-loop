@@ -41,6 +41,7 @@ function Review() {
     return (
 
         <>
+            {/* vvvvv MIGHT USE MUI LIST STYLE, MAYBE vvvvv */}
             {/* <Box>
             <List>
                 <ListItem>
@@ -52,17 +53,26 @@ function Review() {
                     </ListItemButton>
                 </ListItem>
             </List> */}
-            <ul className="">
-                <li>Feelings: {checkInput(feedback.feelings)}</li>
-                <li>Understanding: {checkInput(feedback.understanding)}</li>
-                <li>Support: {checkInput(feedback.support)}</li>
-                <li>Comments: {checkInput(feedback.comments)}</li>
-            </ul>
-            <Button
-                onClick={() => handleSubmit()}
-                variant="contained"
-            >Submit</Button>
+            <div className="max-w-sm self-center">
+                <ul className="text-2xl mb-8 font-sans font-medium">
+                    <li className="mt-3">Feelings: {checkInput(feedback.feelings)}</li>
+                    <li className="mt-3">Understanding: {checkInput(feedback.understanding)}</li>
+                    <li className="mt-3">Support: {checkInput(feedback.support)}</li>
+                    <li className="mt-3">Comments: {checkInput(feedback.comments)}</li>
+                </ul>
+            </div>
+            <div className="mt-8 flex space-x-1 justify-center">
+                <Button 
+                    variant="outlined"
+                    onClick={() => navigate('../comments')}
+                >Back</Button>
+                <Button
+                    onClick={() => handleSubmit()}
+                    variant="contained"
+                >Submit</Button>
+            </div>
             {/* </Box> */}
+            
         </>
     )
 }

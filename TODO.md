@@ -1,28 +1,37 @@
 **!!TO DO LIST!!**
 
 1. [] Components
-    - [] Feelings
-        - [] Input field
-            - [] useState for input field
-        - [] Next Button
-        - [] Action to save info in the store
-    - [] Understanding
-        - [] Input field
-            - [] useState for input field
-        - [] Next Button
-        - [] Action to save info in the store
-    - [] Support 
-        - [] Input field
-            - [] useState for input field
-        - [] Next Button
-        - [] Action to save info in the store
-    - [] Comments
-        - [] Input field
-            - [] useState for input field
-        - [] Next Button
-        - [] Action to save info in the store
-    - [] Review
+    - [X] Feelings
+        - [X] Input field
+            - [X] useState for input field
+        - [X] Next Button
+        - [X] Action to save info in the store
+            - [] Button that, if the user went back to edit a value, would take them straight to the review section.
+    - [X] Understanding
+        - [X] Input field
+            - [X] useState for input field
+        - [X] Next Button
+        - [X] Action to save info in the store
+            - [] Button that, if the user went back to edit a value, would take them straight to the review section.
+    - [X] Support 
+        - [X] Input field
+            - [X] useState for input field
+        - [X] Next Button
+        - [X] Action to save info in the store
+            - [] Button that, if the user went back to edit a value, would take them straight to the review section.
+    - [X] Comments
+        - [X] Input field
+            - [X] useState for input field
+        - [X] Next Button
+        - [X] Action to save info in the store
+            - [] Button that, if the user went back to edit a value, would take them straight to the review section.
+    - [X] Review
         - [] Table of info
             - [] useSelector to get info from store
-        - [] Next Button
+        - [X] Next Button
     - [] Thanks
+        - [] Button to restart
+    - [] Admin page
+        - [] GET req for all submitted feedbacks
+        - [] Table displaying all feedback
+            - [] Delete Button for each entry into the table/database

@@ -28,18 +28,28 @@ function Understanding() {
 
     return (
         <>
-            <h2>How well do you feel you understood today's material?</h2>
-            <form onSubmit={handleSubmit}>
+            <h2 className="text-2xl mb-8 font-sans font-semibold">How well do you feel you understood today's material?</h2>
+            <form 
+                id="UnderstandingForm"
+                onSubmit={handleSubmit}>
                 <TextField
                     type="text" 
                     label="Understanding"
                     value={understandInput}
                     onChange={(event) => setUnderstandInput(event.target.value)}
                     helperText="Scale of 1-5"/>
+            </form>
+            <div className="mt-10 flex space-x-1 justify-center">
                 <Button 
+                    variant="outlined"
+                    onClick={() => navigate('../')}
+                >Back</Button>
+                <Button 
+                    form="UnderstandingForm"
+                    className=""
                     type="submit"
                     variant="contained">Next</Button>
-            </form>
+            </div>
         </>
     )
 }
