@@ -13,6 +13,7 @@ app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
 
+// GET route for the admin Table
 app.get('/feedback', (req, res) => {
     console.log("Inside GET route in server");
 
@@ -28,6 +29,12 @@ app.get('/feedback', (req, res) => {
         }).catch((dbErr) => {
             console.log("Error retrieving data from db", dbErr);
         })
+})
+
+// DELETE route for deleting specific items from the admin table
+app.delete('/feedback/:id', (req, res) => {
+    console.log("Inside DELETE route in server, going to delete this ==>", req.params);
+    const id = req.params;
 })
 
 
