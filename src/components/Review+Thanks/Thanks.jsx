@@ -15,11 +15,13 @@ function Thanks() {
     }
     return (
         <>
-            <h2>Thank you for your feedback!</h2>
-            <Button
-                variant="contained"
-                onClick={() => reset()}
-            >Leave New Feedback</Button>
+            <h2 className="text-2xl mb-8 font-sans font-semibold">Thank you for your feedback!</h2>
+            <div className="mt-10 flex space-x-1 justify-center">
+                <Button
+                    variant="contained"
+                    onClick={() => reset()}
+                    >Leave New Feedback</Button>
+            </div>
         </>
     )
 }

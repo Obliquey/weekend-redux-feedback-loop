@@ -19,17 +19,19 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
-      <Routes>
-        <Route path="/" element={<Feeling />} />
-        <Route path="/understanding" element={<Understanding />} />
-        <Route path="/support" element={<Support />} />
-        <Route path="/comments" element={<Comments />} />
-        <Route path="/review" element={<Review />} />
-        <Route path="/thanks" element={<Thanks />} />
-      </Routes>
+      <main className='flex flex-col min-h-screen'>
+        <Routes>
+          <Route path="/" element={<Feeling />} />
+          <Route path="/understanding" element={<Understanding />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/comments" element={<Comments />} />
+          <Route path="/review" element={<Review />} />
+          <Route path="/thanks" element={<Thanks />} />
+        </Routes>
+      </main>
 
-      <footer className=''>
-        <h2>Thank you for taking time to fill this out!</h2>
+      <footer className='object-bottom'>
+        <h2 className='mt-6 text-4xl'>Thank you for taking time to fill this out!</h2>
       </footer>
     </div>
   );

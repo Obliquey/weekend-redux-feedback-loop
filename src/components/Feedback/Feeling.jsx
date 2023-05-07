@@ -28,18 +28,23 @@ function Feeling() {
 
     return (
         <>
-            <h2>How are you feeling today?</h2>
-            <form onSubmit={handleSubmit}>
+            <h2 className="text-2xl mb-8 font-sans font-semibold">How are you feeling today?</h2>
+            <form 
+                id="FeelingsForm"
+                onSubmit={handleSubmit}>
                 <TextField
                     type="text" 
                     label="Feelings"
                     value={feelingInput}
                     onChange={(event) => setFeelingInput(event.target.value)}
                     helperText="Scale of 1-5"/>
+            </form>
+            <div className="mt-10 object-center">
                 <Button 
+                    form="FeelingsForm"
                     type="submit"
                     variant="contained">Next</Button>
-            </form>
+            </div>
         </>
     )
 }
